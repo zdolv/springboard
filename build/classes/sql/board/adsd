@@ -1,0 +1,20 @@
+		<if test="searchType == 'total'">1=1</if>
+		<if test="searchType == 'normal'">normal like #{boardType}</if>
+		<if test="searchType == 'questAnswer'">questAnswer like #{boardType}</if>
+		<if test="searchType == 'secret'">secret like #{boardType}</if>
+		<if test="searchType == 'free'">free like #{boardType}</if>
+		
+		
+		
+		${boardList.searchType eq 'total' ? 'checked'}
+		
+		
+		
+		<select id="codeNameList" parameterType="com.spring.board.vo.ComcodeVo" resultMap="comCodeVo">
+    	SELECT 
+    		CODE_NAME
+    	FROM
+    		COM_CODE
+    	WHERE
+    		CODE_TYPE = 'menu'
+    </select>
